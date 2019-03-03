@@ -38,8 +38,17 @@ class Api::MoviesController < ApplicationController
     @movie = Movie.find_by(id: the_id)
     #actually update the movie
     @movie.title = params[:title]
-    @movie.run_time == @movie.run_time
+    # @movie.run_time == @movie.run_time
     @movie.save
     render 'show.json.jbuilder'
+  end
+
+  def delete
+    #find the movie
+    the_id = params[:id]
+    @movie = Movie.find_by(id: the_id)
+    #destroy the movie
+    @movie.destroy
+    render 'destroy.json.jbuilder'
   end
 end

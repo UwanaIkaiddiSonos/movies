@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get 'movies/:title' => 'movies#show_title'
     post 'movies/' => 'movies#create'
     patch '/movies/:id' => 'movies#update'
+    delete '/movies/:id' => 'movies#destroy'
     #:id takes custominput from the user and shows the user
   end
 end
