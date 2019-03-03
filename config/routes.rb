@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   # namespace :api do
   #   get "/photos" => "photos#index"
   # end
+  namespace :api do
+    get '/movies' => 'movies#index'
+    get '/movies/:id' => 'movies#show'
+    #:id takes custominput from the user and shows the user
+  end
 end
